@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Form</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+body
+ {
+   margin: 0;
+   padding: 0;
+   background: url("images/p850.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   font-family: sans-serif;
+   height: 100%;
+ }
+ .loginbox
+ {
+   width: 300px;
+   height: 350px;
+   background: rgba(10,0.5,0,0.5);
+   color: #fff;
+   top: 42%;
+   left: 48%;
+   position: absolute;
+   transform: translate(-50%,-50%);
+   box-sizing: border-box;
+   padding:70px 30px;
+ }
+
+h1
+{
+  margin:0;
+  padding:0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+.loginbox p
+{
+  margin:0;
+  padding:0;
+  font-weight: bold;
+}
+.loginbox input
+{
+width:100%;
+margin-bottom: 20px;
+}
+.loginbox input[type="text"], input[type="password"]
+{
+border:none;
+border-bottom:1px solid #fff;
+background: transparent;
+outline:none;
+height: 40 px;
+color:#fff;
+font-size:16px;
+}
+.loginbox input[type="submit"]
+{
+width: 50%;
+  align-items:center;
+  background-color:#f2a530;
+  color: white;
+  padding: 8px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.loginbox input[type="submit"]:hover
+{
+cursor: pointer;
+background:#706b64;
+color:#000;
+
+}
+.loginbox a
+{
+  text-decoration: none
+  font-size: 12px;
+  line-height: 20px;
+  color:darkgrey;
+  text-align: center;
+
+}
+.loginbox a:hover
+{
+  color:#ffc107;
+}
+</style>
+</head>
+<body>
+
+<form class="" action="addlogin.php" method="POST" enctype="multipart/form-data">
+	<div class="loginbox">
+		<h1 style="text-align:center;color:white;font-family:Times New Roman">LOGIN</h1>
+			<input type="text" class="form-control" id="name" name="username" placeholder="username" required>
+			<input type="password" class="form-control" id="pawd" name="password" placeholder="password">
+			<center><input type="submit" name="" value="SIGN IN" type="submit"></center>
+			<br>
+			<p><center>
+			<a href="forget.html">Forget your Password </a>
+			</p>
+			<a href="studreg.html">Don't have an account </a>
+			</center></p>
+    </div>
+</form>
+</body>
+</html>
+
+
+
+
+
+ 
