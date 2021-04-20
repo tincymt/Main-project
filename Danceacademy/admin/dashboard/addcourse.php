@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("dbconnection.php");
 
 $course_name=$_POST["dname"];
@@ -27,7 +28,7 @@ if(mysqli_query($con,$sql))
 {
   ?>
    <script>alert("Successfully inserted");
-   location.href="viewdancestyle.php";
+   location.href="course.php";
    </script>
    <?php
 }

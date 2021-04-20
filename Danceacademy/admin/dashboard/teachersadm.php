@@ -1,95 +1,67 @@
 <?php
 session_start();
-include("dbconnection.php");
-if(!empty($_SESSION['username']))
+if(isset($_SESSION['username']))
 {
 	$temp=$_SESSION['username'];
-	?>
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-   <script>
-        function getdistrict(val) {
-        $.ajax({
-        type: "POST",
-        url: "get_district.php",
-        data:'state_id='+val,
-        success: function(data){
-          $("#district-list").html(data);
-        }
-        });
-        }
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        </script>
+    <title>DANCE ACADEMY - Dashboard</title>
 
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-  <title>Student - details</title>
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this page -->
-  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-<style>
-           table, th, td {
-
-               text-align: center;
-                        background-color:#ebd1e8;
-                        min-width: 15px;
-           }
-
-
-       </style>
 </head>
 
 <body id="page-top">
 
-  <!-- Page Wrapper -->
-  <div id="wrapper">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">Rhythm</div>
-      </a>
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">RHYTHM </div>
+            </a>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Interface
-      </div>
-	  
-	   
-				<li class="nav-item">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
+            </div>
+			<li class="nav-item">
 					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseUser">
 						<i class="fas fa-fw fa-user"></i>
 						<span>Classes</span>
@@ -98,30 +70,36 @@ if(!empty($_SESSION['username']))
 							<div class="bg-white py-2 collapse-inner rounded">
 								<h6 class="collapse-header">Class Details:</h6>
 									<a class="collapse-item" href="course.php">Add Courses</a>
-										<a class="collapse-item" href="courseview.php">View Course</a>
-									<a class="collapse-item" href="batch.php">Add Batch</a>
-									<a class="collapse-item" href="batchview.php">View batch</a>
-									<a class="collapse-item" href="batch.php">Assign Students</a>
-									<a class="collapse-item" href="manage_classes.php">Manage Classes</a>
+										<a class="collapse-item" href="manage_classes.php">Manage Course</a>
+										<a class="collapse-item" href="shift.php">Add shift</a>
+										<a class="collapse-item" href="duration.php">Add duration</a>
+									
+								
+									
+									
 							</div>
 						</div>
 				</li>
-	  
 
-				<li class="nav-item">
+            <!-- Nav Item - Pages Collapse Menu -->
+            
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+           
+<li class="nav-item">
 					<a class="nav-link collapsed"  data-toggle="collapse"   href="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1"> 
 						<i class="fas fa-fw fa-book"></i>
-							<span>Registration</span>
+							<span>Student</span>
 					</a>
 						<div class="row">
 							<div class="col">
 								<div class="collapse multi-collapse" id="multiCollapseExample1">
 									<div class="card card-body">
 										<div class="bg-white py-2 collapse-inner rounded">
-											<h6 class="collapse-header">Registration Details:</h6>
-												<a class="collapse-item" href="approvestu.php">All Registration</a>
-												 <a class="collapse-item" href="rejstu.php">New Registration</a>
-												 <a class="collapse-item" href="addteachers.php"> Accepted Registration</a> <a class="collapse-item" href="addteachers.php"> Rejected Registration</a>
+											<h6 class="collapse-header">student Details:</h6>
+												<a class="collapse-item" href="approvestu.php">Approve Student</a>
+											
+												
 											
 										</div>
 									</div>
@@ -129,11 +107,7 @@ if(!empty($_SESSION['username']))
 							</div>
 						</div>		
 				</li>
- 
- 
- 
-				
-  <li class="nav-item">
+				<li class="nav-item">
 						<a class="nav-link collapsed"  data-toggle="collapse"   href="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">
 							<i class="fas fa-fw fa-user"></i>
 							<span>Teachers</span>
@@ -145,9 +119,10 @@ if(!empty($_SESSION['username']))
 									<div class="bg-white py-2 collapse-inner rounded">
 										<h6 class="collapse-header">Teacher Details:</h6>
 											<a class="collapse-item" href="teachersadm.php">Add Teachers</a>
-											<a class="collapse-item" href="manage_teach.php">Manage Teachers</a>
+											<a class="collapse-item" href="assign_teachers_adm.php">Assign Teachers</a>
+										
 											<a class="collapse-item" href="qualification.php">Add Qualification</a>
-											<a class="collapse-item" href="manage_qual.php">Manage Qualification</a>
+									
 											
 									</div>
 								</div>
@@ -155,7 +130,6 @@ if(!empty($_SESSION['username']))
 						</div>
 					</div>
 				</li>
-    
 				<li class="nav-item">
 					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
 						<i class="fas fa-skating"></i>
@@ -173,117 +147,124 @@ if(!empty($_SESSION['username']))
 						</div>
 					</div>
 				</li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-					<hr class="sidebar-divider">
-						<div class="sidebar-heading">
-							Addons
-						</div>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Addons
+            </div>
 
-    
-				<li class="nav-item">
-					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-						  <i class="fas fa-fw fa-folder"></i>
-						  <span>Pages</span>
-					</a>
-					<div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-						<div class="bg-white py-2 collapse-inner rounded">
-							<h6 class="collapse-header">Login Screens:</h6>
-							<a class="collapse-item" href="login.php">Login</a>
-							<a class="collapse-item" href="register.php">Register</a>
-							<a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-							<div class="collapse-divider"></div>
-							<h6 class="collapse-header">Other Pages:</h6>
-							<a class="collapse-item" href="404.html">404 Page</a>
-							<a class="collapse-item" href="blank.html">Blank Page</a>
-						  </div>
-						</div>
-				</li>
-
-				<li class="nav-item">
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Pages</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Login Screens:</h6>
+                        <a class="collapse-item" href="login.html">Login</a>
+                        <a class="collapse-item" href="register.html">Register</a>
+                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Other Pages:</h6>
+                        <a class="collapse-item" href="404.html">404 Page</a>
+                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                    </div>
+                </div>
+            </li>
+<li class="nav-item">
 					<a class="nav-link" href="payment.php">
-						<i class="fas fa-fw fa-chart-area"></i>
+						  <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
 						  <span>Payement</span>
 					</a>
 				</li>
-				
-				
+            <!-- Nav Item - Charts -->
+          
 
-				<hr class="sidebar-divider d-none d-md-block">
-				
-				<div class="text-center d-none d-md-inline">
-					<button class="rounded-circle border-0" id="sidebarToggle"></button>
-               </div>
 
-		</ul>
-    
-		<div id="content-wrapper" class="d-flex flex-column">
-			<div id="content">
-				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-					<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-						<i class="fa fa-bars"></i>
-					</button>
 
- <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+            <!-- Nav Item - Tables -->
+            
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
 
-					<ul class="navbar-nav ml-auto">
-						<div class="topbar-divider d-none d-sm-block"></div>
-							<li class="nav-item dropdown no-arrow">
-								<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<img class="img-profile rounded-circle" src="s3.png">
-										<?php
-											echo $temp;
-										?>
-								</a>
-							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-								<a class="dropdown-item" href="#">
-									<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-									Profile
-								</a>
-							
-								<a class="dropdown-item" href="#">
-									<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-									Settings
-								</a>
-							
-								<a class="dropdown-item" href="#">
-									<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-									Activity Log
-								</a>
-							
-							<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
-									<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-									Logout
-								</a>
-							</div>
-						</li>
+      
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+         
             
 
-          </ul>
+        </ul>
+        
 
-        </nav>
-        <!-- End of Topbar -->
+      
+        <div id="content-wrapper" class="d-flex flex-column">
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+           
+            <div id="content">
 
-          <!-- Page Heading -->
-         
-         
+           
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-          <!-- DataTales Example -->
-          <div id="layoutSidenav_content">
+               
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                  
+
+                   
+
+<ul class="navbar-nav ml-auto">
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                         
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><img class="img-profile rounded-circle" src="s3.png">
+										<?php
+											echo $temp;
+										?></span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                  
+									 <a  href="logout.php" class="dropdown-item">&nbsp &nbsp  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i></i>Logout</a>
+                             
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+         <div id="layoutSidenav_content">
                 <main>
 				
 
@@ -306,28 +287,14 @@ if(!empty($_SESSION['username']))
 								<div class="container">
 															
 															<div class="card-body" style="background: LightGray">
-															<form action="addadmbatch.php" method="POST">
+															<form action="addteachersadm.php" method="POST">
 															<div class="input-group form-group">
+															<input type="text" name="username" class="form-control" placeholder="Enter Teacher username" id="name1" onblur="validate()" required>
 															
-															<input type="text" name="batchduration" class="form-control" placeholder="Enter the duration of the course" id="dur" onblur="valid()" required>
-															</div>
-															<div class="input-group form-group">
+															<input type="password" name="password" class="form-control" placeholder="Enter password" id="pawd" onblur="validpaswd()" required>
 															
-															<input type="text" name="batchduration" class="form-control" placeholder="Enter the duration of the course" id="dur" onblur="valid()" required>
-															</div>
-															<div class="input-group form-group">
+															<input type="text" name="usertype" class="form-control" placeholder="Enter Usertype" id="name1" onblur="validate()" required>
 															
-															<input type="text" name="batchduration" class="form-control" placeholder="Enter the duration of the course" id="dur" onblur="valid()" required>
-															</div>
-															<div class="input-group form-group">
-															
-															<input type="text" name="batchduration" class="form-control" placeholder="Enter the duration of the course" id="dur" onblur="valid()" required>
-															</div>
-															<div class="input-group form-group">
-															<input type="text" name="fee" class="form-control" placeholder="Enter prize" id="prize" value=""onblur="valid() " required></div>
-															<div>
-															<input type="text" name="fee" class="form-control" placeholder="Enter prize" id="prize" value=""onblur="valid() " required></div>
-															<input placeholder="Enter the date " required class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" name="dob"/>	
 															
 															<br></div>
 																<div class="col-xs-6 col-sm-6 col-md-6">	
@@ -375,28 +342,28 @@ if(!empty($_SESSION['username']))
             </div>
 			
 			<script>
-			  function validate()
+			   function validate()
 			  {
 			  var name=document.getElementById("name1").value;
-			  var letters=/^[a-zA-Z\s]*$/;
+			  var letters=/^[a-zA-Z]+$/;
 			  if(!name.match(letters))
 			  {
 			  alert("Please enter  course correctly");
 			  document.getElementById("name1").value="";
 			  }
 			  }
-			  function valid()
-			  {
-			  var name=document.getElementById("prize").value;
-			  var num=/^[0-9]*$/;
-			  if(!name.match(num))
-			  {
-			  alert("Please enter the prize correctly");
-			  document.getElementById("prize").value="";
-			  }
-			  }
 			 
-			  
+			    function validpaswd()
+   {
+    var pass=document.getElementById("pawd").value;
+	var passexp =/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+        if(!pass.match(passexp))
+	{
+	 alert("Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters");
+	 document.getElementById("pawd").value="";
+	}
+   }
+		
 
 
 			
@@ -408,44 +375,23 @@ if(!empty($_SESSION['username']))
           </div>
 
         </div>
-        <!-- /.container-fluid -->
+       
 
       </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
       
-      <!-- End of Footer -->
 
     </div>
-    <!-- End of Content Wrapper -->
+   
 
   </div>
-  <!-- End of Page Wrapper -->
+ 
 
-  <!-- Scroll to Top Button-->
+
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="logout.php">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
+ 
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>

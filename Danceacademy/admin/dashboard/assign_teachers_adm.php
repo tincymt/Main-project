@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 if(isset($_SESSION['username']))
@@ -28,7 +27,6 @@ if(isset($_SESSION['username']))
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
-
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -36,6 +34,17 @@ if(isset($_SESSION['username']))
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+						   <?php
+include("dbconnection.php");
+$sq="select * from tbl_login where username='$temp'";
+$res=mysqli_query($con,$sq);
+$a=mysqli_fetch_array($res);
+$b=$a['login_id'];
+$sql="select * from tbl_teacher where login_id='$b'";
+$c=mysqli_query($con,$sql);
+$result=mysqli_fetch_array($c);
+?>
+     
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -62,7 +71,7 @@ if(isset($_SESSION['username']))
             <div class="sidebar-heading">
                 Interface
             </div>
-		<li class="nav-item">
+			<li class="nav-item">
 					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseUser">
 						<i class="fas fa-fw fa-user"></i>
 						<span>Classes</span>
@@ -99,7 +108,7 @@ if(isset($_SESSION['username']))
 										<div class="bg-white py-2 collapse-inner rounded">
 											<h6 class="collapse-header">student Details:</h6>
 												<a class="collapse-item" href="approvestu.php">Approve Student</a>
-												
+											
 												
 											
 										</div>
@@ -121,9 +130,9 @@ if(isset($_SESSION['username']))
 										<h6 class="collapse-header">Teacher Details:</h6>
 											<a class="collapse-item" href="teachersadm.php">Add Teachers</a>
 											<a class="collapse-item" href="assign_teachers_adm.php">Assign Teachers</a>
-											<a class="collapse-item" href="manage_teach.php">Manage Teachers</a>
+											
 											<a class="collapse-item" href="qualification.php">Add Qualification</a>
-											<a class="collapse-item" href="manage_qual.php">Manage Qualification</a>
+											
 											
 									</div>
 								</div>
@@ -240,7 +249,7 @@ if(isset($_SESSION['username']))
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="profile.php">
+                                <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -264,95 +273,151 @@ if(isset($_SESSION['username']))
                     </ul>
 
                 </nav>
-                <div class="container">
+        <div class="container-fluid">
 
-        
-	   <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
-	   <div class="container">
-	    <div class="row mt-5">
-	      <div class="col-md-6 col-xl-5 mb-4">
-              <!--Form-->
-              <div class="card wow fadeInRight" data-wow-delay="0.3s">
-                <div class="card-body">
-                  <!--Header-->
-                  <div class="text-center">
-                    <h3 class="white-text">
-					 <form action="add_profile_admin.php" method="POST">
-                            <table class="table table-bordered" id="dataTable">
-                      <i class="fas fa-user white-text"></i> change password:</h3>
-                    <hr class="hr-light">
-                  </div>
-				   <div class="loginbox">
-				    <form action="add_profile_admin.php" method="POST" enctype="multipart/form-data">
-					<?php
-													include("dbconnection.php");
-													$sq="select * from tbl_login where username='$temp'";
-													$res=mysqli_query($con,$sq);
-													$a=mysqli_fetch_array($res);
-													$b=$a['login_id'];
-													$sql="select * from tbl_studreg where login_id='$b'";
-													$c=mysqli_query($con,$sql);
-													$result=mysqli_fetch_array($c);
-													?>
-			 <div class="navigation ">
-			 <p style="color:black;font-size:20px">
-			<input type="text"  class="form-control"  name="name"  autofocus="autofocus" required  placeholder="UserName"  value="<?php echo $a['username']; ?>">
-    <br><label for="exampleInputEmail1">Old Password</label>
-	
-		
+         
+          <div id="layoutSidenav_content">
+                <main>
+				
+
+                    <div class="container-fluid">
+                        <h1 class="mt-4">Assign Teachers</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Assign</li>
+                        </ol>
+
+	<br><br>
+	  <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"  border="1" style="font-family:Georgia, Garamond, Serif;color:navy;">
+                                    
+								<div class="container">
+															
+															<div class="card-body" style="background: LightGray">
+															<form action="add_assign_teachers.php" method="POST">
+															<div class="input-group form-group">
+																<select  id="ctrSubDropDownLong"required  name="shift"value="" class="form-control" required>
+                        <option value="">shift</option>
+                        <option value="Evening">Evening</option>
+    <option value="Morning">Morning</option>
+                        </select>
+														<select  id="ctrSubDropDownLong" name="duration" value="" class="form-control" required>
+														<option value="">Select duration</option>
+<?php $query =mysqli_query($con,"SELECT * FROM tbl_duration");
+                        while($row=mysqli_fetch_array($query))
+                        { ?>
+                        <option value="<?php echo $row['duration'];?>"><?php echo $row['duration'];?></option>
+                        <?php
+                        }
+                        ?>
+                        </select>
+															<select  id="ctrSubDropDownLong" name="teacher" value="" class="form-control" required>
+                        <option value="">Select Teacher</option>
+<?php $query =mysqli_query($con,"SELECT * FROM tbl_teacher");
+                        while($row=mysqli_fetch_array($query))
+                        { ?>
+                        <option value="<?php echo $row['teach_name'];?>"><?php echo $row['teach_name'];?></option>
+                        <?php
+                        }
+                        ?>
+                        </select>
+						<select  id="ctrSubDropDownLong" name="course" value="" class="form-control" required>
+														<option value="">Select course</option>
+<?php $query =mysqli_query($con,"SELECT * FROM tbl_course");
+                        while($row=mysqli_fetch_array($query))
+                        { ?>
+                        <option value="<?php echo $row['course_name'];?>"><?php echo $row['course_name'];?></option>
+                        <?php
+                        }
+                        ?>
+                        </select>
+															
+															
+															<br></div>
+																<div class="col-xs-6 col-sm-6 col-md-6">	
+											<div class="input-group form-group">
 												
 												
-														
-												
-    <input type="password"   required class="form-control"   autofocus="autofocus" required  placeholder="Old Password" name="old" id="old" value="<?php echo $a['password']; ?>">
-    <br><label for="exampleInputEmail1">New Password</label>
-    <input type="password" class="form-control" name="new" id="pawd" placeholder="New Password" onchange="validpaswd()" autofocus="autofocus" required>
-    <br><label for="exampleInputEmail1">Confirm Password</label>
-    	<input type="password" name="cnew" class="form-control" id="cpawd" placeholder="Confirm New Password" onchange="validcpass()" autofocus="autofocus" required>
+										
+										
+											</div>
+										</div>
+										
+															</div>
 
+															<div class="card-footer">
+															<div class="d-flex justify-content-center links">
+															&emsp;<input type="submit" value="Add" class="btn btn-primary">&emsp;
+															<input type="reset" value="Cancel" class="btn btn-primary">
+															</div>
+															</div></div>
+                            </div>
+                        </div></div>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
-<div class="modal-footer">
-<button type="button" class="btn btn-default" data-dismiss="modal">
-Close
-<span class="glyphicon glyphicon-remove-sign"></span>
-</button>
-<input type="submit" name="update" value="Update" class="btn btn-success">
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
+							
+                        <div style="height: 100vh;"></div>
+                        <div class="card mb-4"><div class="card-body"></div></div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted"></div>
+                            <div>
+                                <a href="#"></a>
+                                &middot;
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            </div>
+			
+			<script>
+			  function validate()
+			  {
+			  var name=document.getElementById("name1").value;
+			  var letters=/^[a-zA-Z\s]*$/;
+			  if(!name.match(letters))
+			  {
+			  alert("Please enter  course correctly");
+			  document.getElementById("name1").value="";
+			  }
+			  }
+			  function valid()
+			  {
+			  var name=document.getElementById("prize").value;
+			  var num=/^[0-9]*$/;
+			  if(!name.match(num))
+			  {
+			  alert("Please enter the prize correctly");
+			  document.getElementById("prize").value="";
+			  }
+			  }
+			 
+			  
 
 
 			
+				</script>
 			
-		<script>
-		
-		
-		  function validpaswd()
-   {
-    var pass=document.getElementById("pawd").value;
-	var passexp =/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-        if(!pass.match(passexp))
-	{
-	 alert("Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters");
-	 document.getElementById("pawd").value="";
-	}
-   }
-   
-   function validcpass()
-   {
-    var pass=document.getElementById("pawd").value;
-	var cpass=document.getElementById("cpawd").value;
-	if(!(pass==cpass))
-	{
-	 alert("Password not matching");
-	 document.getElementById("cpawd").value="";
-	}
-   }
-	
-   </script>
+			
+			
+			
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
@@ -371,48 +436,9 @@ Close
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
-<script>
 
-function validname()
-   {
-    var name=document.getElementById("nam").value;
-	var letters =/^[a-zA-Z ]*$/;
-	if(!name.match(letters))
-	{
-	 alert("Please enter your name correctly");
-	 document.getElementById("nam").value="";
-	}
-   }
-
-
-
-
-
-
-function validpaswd()
-   {
-    var pass=document.getElementById("pass").value;
-	var passexp =/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-        if(!pass.match(passexp))
-	{
-	 alert("Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters");
-	 document.getElementById("pawd").value="";
-	}
-   }
-   
-   function validcpass()
-   {
-    var pass=document.getElementById("new").value;
-	var cpass=document.getElementById("cpawd").value;
-	if(!(pass==cpass))
-	{
-	 alert("Password not matching");
-	 document.getElementById("cpawd").value="";
-	}
-   }
-   </script>	
-		
- 
+  <!-- Logout Modal-->
+  
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>

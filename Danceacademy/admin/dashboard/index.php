@@ -73,10 +73,9 @@ if(isset($_SESSION['username']))
 										<a class="collapse-item" href="manage_classes.php">Manage Course</a>
 										<a class="collapse-item" href="shift.php">Add shift</a>
 										<a class="collapse-item" href="duration.php">Add duration</a>
-									<a class="collapse-item" href="batch.php">Add Batch</a>
-									<a class="collapse-item" href="manage_batch.php">Manage batch</a>
-									<a class="collapse-item" href="batch.php">Assign Students</a>
-									<a class="collapse-item" href="studview.php">student details</a>
+									
+								
+									
 									
 							</div>
 						</div>
@@ -90,17 +89,17 @@ if(isset($_SESSION['username']))
 <li class="nav-item">
 					<a class="nav-link collapsed"  data-toggle="collapse"   href="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1"> 
 						<i class="fas fa-fw fa-book"></i>
-							<span>Registration</span>
+							<span>Student</span>
 					</a>
 						<div class="row">
 							<div class="col">
 								<div class="collapse multi-collapse" id="multiCollapseExample1">
 									<div class="card card-body">
 										<div class="bg-white py-2 collapse-inner rounded">
-											<h6 class="collapse-header">Registration Details:</h6>
-												<a class="collapse-item" href="approvestu.php">All Registration</a>
-												 <a class="collapse-item" href="rejstu.php">New Registration</a>
-												 <a class="collapse-item" href="addteachers.php"> Accepted Registration</a> <a class="collapse-item" href="addteachers.php"> Rejected Registration</a>
+											<h6 class="collapse-header">student Details:</h6>
+												<a class="collapse-item" href="approvestu.php">Approve Student</a>
+											
+												
 											
 										</div>
 									</div>
@@ -120,9 +119,10 @@ if(isset($_SESSION['username']))
 									<div class="bg-white py-2 collapse-inner rounded">
 										<h6 class="collapse-header">Teacher Details:</h6>
 											<a class="collapse-item" href="teachersadm.php">Add Teachers</a>
-											<a class="collapse-item" href="manage_teach.php">Manage Teachers</a>
+											<a class="collapse-item" href="assign_teachers_adm.php">Assign Teachers</a>
+											
 											<a class="collapse-item" href="qualification.php">Add Qualification</a>
-											<a class="collapse-item" href="manage_qual.php">Manage Qualification</a>
+											
 											
 									</div>
 								</div>
@@ -217,22 +217,11 @@ if(isset($_SESSION['username']))
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                  
 
                    
 
-
+<ul class="navbar-nav ml-auto">
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                          
@@ -250,7 +239,7 @@ if(isset($_SESSION['username']))
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="profile.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -264,8 +253,9 @@ if(isset($_SESSION['username']))
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                  
+									 <a  href="logout.php" class="dropdown-item">&nbsp &nbsp  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i></i>Logout</a>
+                             
                                 </a>
                             </div>
                         </li>
@@ -273,17 +263,10 @@ if(isset($_SESSION['username']))
                     </ul>
 
                 </nav>
-               	<div class="graph-visual tables-main" id="exampl">
+              
                 <div class="container-fluid">
 
                  
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-						
-                        <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"  OnClick="CallPrint(this.value)"></i> Generate Report</a>
-								
-                    </div>
 
                     <!-- Content Row -->
                     <div class="row">
@@ -409,24 +392,7 @@ echo "(".$row[0].")";
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.php">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+ 
 	<script>
 	function CallPrint(strid) {
 	var prtContent = document.getElementById("exampl");
