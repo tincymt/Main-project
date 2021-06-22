@@ -2,12 +2,6 @@
  session_start();
 include("dbconnection.php");
 
-
-
-
-
-
-$date_of_adm=$_POST['doa'];
 $course_name=$_POST['course'];
 $duration=$_POST['duration'];
 $shift_type=$_POST['shift'];
@@ -33,19 +27,33 @@ while($results=mysqli_fetch_array($result))
 {
 	$c=$results['login_id'];
 }
+$r="select * from tbl_studentbooking where login_id='$c'";
+$result=mysqli_query($con,$r);
+$num=mysqli_num_rows($result);
+if($num==1)
+{
+  ?>
+<script>alert("You are already Booked");
+location.href="booking.php";
+ exit;
+</script>
+<?php
+}
+else
+{
 
-$sq="insert into tbl_studentbooking(login_id,date_of_adm,course_name,duration,shift_type,gurad_num,dance_exp,file,status) 
-values ('$c','$date_of_adm','$course_name','$duration','$shift_type','$gurad_num','$dance_exp','$file','$status')";
+$sq="insert into tbl_studentbooking(login_id,course_name,duration,shift_type,gurad_num,dance_exp,file,status) 
+values ('$c','$course_name','$duration','$shift_type','$gurad_num','$dance_exp','$file','$status')";
 
 if(mysqli_query($con,$sq))
 {
 	?>
-	<script>alert("you have successfully saved your details");
-     location.href="booking.php";
+	<script>alert("Successfully Booked. You will be directed to Payment Page");
+     location.href="pay.php";
 	 exit;
   </script>
   <?php
-}
+}}
 
 mysqli_close($con);
 ?>

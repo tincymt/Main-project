@@ -19,7 +19,41 @@
   
   
   <style>
-.panel-heading {
+  
+ h4 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color:purple;
+   font-color: purple;
+    text-decoration: underline overline;
+	font-weight: 900;
+    margin-bottom: 30px;
+  }
+  
+   h7 {
+    font-size: 30px;
+    text-transform: uppercase;
+    color:purple;
+   font-color: purple;
+  background: url("Images/p44.jpg");
+	font-weight: 900;
+    margin-bottom: 30px;
+  }
+
+   P {
+    font-size: 22px;
+   text-align:justify;
+    color:black;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+	  .container {
+			margin-top: 40px;
+		}
+		.btn-primary {
+			width: 100%;
+		}
+	.panel-heading {
     color: #fff !important;
     background-color: #f4511e !important;
     padding: 25px;
@@ -29,16 +63,28 @@
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
   }
- 
-
-  h7 {
-    font-size: 24px;
-    text-transform: uppercase;
-    color: #303030;
-    font-weight: 600;
-    margin-bottom: 30px;
+  .panel-head {
+    color: #fff !important;
+    background-color: #af9aae !important;
+    padding: 25px;
+	 font-size: 20px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
- 
+  
+   
+   input[type=submit] {
+  background-color:#e0a800 ;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+}
  
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,30 +144,27 @@
 <!--==============================
               header
 =================================-->
-
 <div class="container-fluid">
 	<div class="container p-3 my-3 border">
 	<div class="container_12">
         <div class="grid_12">
 		<ul class="nav navbar-right">
 			<li class="nav navbar-right"><a href="studreg.html">
-				<button type="button" class="btn btn-success">Sign up</button></a>
+				<button type="button" class="btn btn-success">SIGN UP</button></a>
 			</li>
 			<li class="nav navbar-right"><a href="login.php">
-				<button type="button" class="btn btn-success">Sign In</button></a></li>
+				<button type="button" class="btn btn-success">SIGN IN</button></a></li>
 	  
-		</ul><div class="navbar-header"><img src="user/images/P51.jpg">
-        
-			<a class="navbar-brand" href="home.html"></a>
-		</div>		
-		    </div>
-    <div class="clear"></div>
-  </div>
+		</ul>
+ 
 		
-   </div>
-   </div>
-<div class="main">
-
+		<div class="navbar-header"> <img src="Images/p777c.jpg">
+        
+			<a class="navbar-brand" href="index.php"></a>
+			
+		</div></div></div></div></div>
+		
+  
   <section id="stuck_container">
   <div class="container_12">
         <div class="grid_12">
@@ -129,36 +172,43 @@
   
           <div class="navigation ">
             <nav>
-              <ul class="sf-menu">
+               <ul class="sf-menu">
                <li><a href="home.html">Home</a></li>
                <li><a href="about.php">About</a></li>
-              <li class="current"><a href="classes.html">our classes</a></li>
-               <li><a href="staff.html">Instructors</a></li>
+              <li class="current"><a href="classes.html">Our classes</a></li>
+               <li><a href="staff.php">Our Team</a></li>
+
                <li><a href="contacts.php">Contacts</a></li>
-             </ul>
+			<li><a href="gallery.html">Gallery</a></li>
+			
+          </ul> 
             </nav>
             <div class="clear"></div>
           </div>
          <div class="clear"></div>
-     </div>
+     </div> </div>
      <div class="clear"></div>
     </div>
+	</section>
+
 <!--=====================
           Content
 ======================-->
 
-
-
 <section id="iq-classes" class="iq-blog overview-block-pb">
             <div class="container">
+			 <div class="navigation ">
                <div class="row">
                   <div class="col-lg-12 col-md-12">
                      <div class="heading-title text-center">
-                        <h2 class="title iq-tw-6">Our Classes</h2>
+                         <h2><div class="panel-heading">
+						 
+						  <center>...CLASSES...</center></div></h2>
                       <!--  <p>Lorem Ipsum is simply dummy text ever sincehar the 1500s, when an unknownshil printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p> -->
                      </div>
                   </div>
                </div>
+			   <br>
                <div class="row">
 			    <div class="col-md-4">
 			    <div class="thumbnail">
@@ -171,13 +221,13 @@
                         <div class="iq-blog-detail">
                            <div class="iq-entry-title iq-mb-10">
                               <a href="login.php">
-                                 <h5 class="iq-tw-6"><center><div class="panel-heading">BHARATHANATYAM </div></center></h5>
+                                 <h5 class="iq-tw-6"><center><div class="panel-head">BHARATHANATYAM </div></center></h5>
                          </a>
 							
                            </div>
                            <div class="iq-entry-content">  <center>
-							   <h6 style="color:black;font-size:40px;">$19</h6>
-								<a href="login.php"><input type="submit" id="bt" value="Apply Now" class="btn btn-success"></a></center><br><br>
+							   <h6 style="color:black;font-size:40px;">₹ 500</h6>
+							
 							  
 							  
                            </div>
@@ -196,12 +246,12 @@
                         <div class="iq-blog-detail">
                            <div class="iq-entry-title iq-mb-10">
                               <a href="login.php">
-                                 <h5 class="iq-tw-6"><center><div class="panel-heading">MOHINIYAATTAM  </div></center></h5>
+                                 <h5 class="iq-tw-6"><center><div class="panel-head">MOHINIYAATTAM  </div></center></h5>
                               </a>
                            </div>
                            <div class="iq-entry-content"><center>
-                              <h6 style="color:black;font-size:40px;">$15</h6></center>
-							  <center>	<a href="login.php"><input type="submit" id="bt" value="Apply Now" class="btn btn-success"></a></center><br><br>
+                              <h6 style="color:black;font-size:40px;"> ₹ 500</h6>
+							
 							  
 							  
                            </div>
@@ -221,11 +271,11 @@
                         <div class="iq-blog-detail">
                            <div class="iq-entry-title iq-mb-10">
                               <a href="login.php">
-                                 <h5 class="iq-tw-6"><center><div class="panel-heading">KUCHUPUDI  </div></center></h5>
+                                 <h5 class="iq-tw-6"><center><div class="panel-head">KUCHUPUDI  </div></center></h5>
                               </a>
                            </div><center>
-                          <h6 style="color:black;font-size:40px;">$10</h6></center>
-							  <center>	<a href="login.php"><input type="submit" id="bt" value="Apply Now" class="btn btn-success"></a></center><br><br>
+                         <h6 style="color:black;font-size:40px;"> ₹ 500</h6>
+							
 							  
 							  
                            </div>
@@ -244,11 +294,11 @@
                         <div class="iq-blog-detail">
                            <div class="iq-entry-title iq-mb-10">
                               <a href="login.php">
-                                 <h5 class="iq-tw-6"><center><div class="panel-heading">KATHAK</div></center></h5>
+                                 <h5 class="iq-tw-6"><center><div class="panel-head">KATHAK</div></center></h5>
                               </a>
                            </div><center>
-                          <h6 style="color:black;font-size:40px;">$20</h6></center>
-							  <center>	<a href="login.php"><input type="submit" id="bt" value="Apply Now" class="btn btn-success"></a></center><br><br>
+                         <h6 style="color:black;font-size:40px;"> ₹500 </h6>
+							 
 							  
 							  
                            </div>
@@ -260,18 +310,19 @@
        
                      <div class="iq-blog-entry white-bg">
                         <div class="iq-entry-image clearfix">
-                           <a href="login.php">   <img class="img-fluid" src="Images/p37.jpg" alt="#"></a>
+                           <a href="login.php">   <img class="img-fluid" src="Images/z5.jpg" alt="#"></a>
                            
                         </div>
                         <div class="iq-blog-detail">
                            <div class="iq-entry-title iq-mb-10">
                               <a href="login.php" >
-                                 <h5 class="iq-tw-6"><center> <div class="panel-heading">HIP HOP</div></center></h5>
+							
+                                 <h5 class="iq-tw-6"><center> <div class="panel-head">HIP HOP</div></center></h5>
                               </a>
                            </div><center>
-                          <h6 style="color:black;font-size:40px;">$11</h6><center>
-							  <center>	<a href="login.php"><input type="submit" id="bt" value="Apply Now" class="btn btn-success"></a></center><br><br>
-							  <BR>
+                        <h6 style="color:black;font-size:40px;"> ₹ 500</h6>
+							  
+							 
 							  
                            </div>
                          
@@ -283,19 +334,19 @@
        
                      <div class="iq-blog-entry white-bg">
                         <div class="iq-entry-image clearfix">
-                           <a href="login.php">   <img class="img-fluid" src="Images/p40.jpg" alt="Bharathanatyam.php"></a>
+                           <a href="login.php">   <img class="img-fluid" src="Images/z2.jpg" alt="Bharathanatyam.php"></a>
                            
                         </div>
                         <div class="iq-blog-detail">
                            <div class="iq-entry-title iq-mb-10">
                               <a href="login.php">
                                  <h5 class="iq-tw-6"><center>
-								 <div class="panel-heading">WESTERN DANCE  </div></h5>
+								 <div class="panel-head">CONTEMPORARY  </div></h5>
                               </a>
                            </div>
                            <div class="iq-entry-content"><center>
-							   <h6 style="color:black;font-size:40px;">$5</h6></center>
-							  <center>	<a href="login.php"><input type="submit" id="bt" value="Apply Now" class="btn btn-success"></a></center><br><br>
+							  <h6 style="color:black;font-size:40px;"> ₹ 500</h6>
+							 
 							  
 							  
                            </div>
@@ -305,31 +356,28 @@
 					
 					 
 				  </div>  </div> 
+				  
 		
+		<center>	<div class="text-center mt-4">
+		<br><center>
+											<a href="login.php"><input type="submit" id="bt" value="Apply Now" class="btn btn-success"></a></center>
+	                                </center>
+										<hr class="hr-light mb-3 mt-4">
+					
+									</div>
+	
+<br>
+</section>	
+
+ <div class="navigation ">
+ <div class="panel-head"><center><P style="font-size:20px;color:white;text-align:center">
+ "EVERY DAY BRINGS A CHANCE FOR YOU TO DRAW IN A BREATH, KICK OFF YOUR SHOES, AND DANCE"</p></center></div>
+		</div> <br>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-        
-      </table>
-    </div>
    
 <!--==============================
               footer_top

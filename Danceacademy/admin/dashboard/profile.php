@@ -35,6 +35,7 @@ if(isset($_SESSION['username']))
     <div id="wrapper">
 
         <!-- Sidebar -->
+       
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
@@ -62,7 +63,7 @@ if(isset($_SESSION['username']))
             <div class="sidebar-heading">
                 Interface
             </div>
-		<li class="nav-item">
+			<li class="nav-item">
 					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseUser">
 						<i class="fas fa-fw fa-user"></i>
 						<span>Classes</span>
@@ -71,7 +72,7 @@ if(isset($_SESSION['username']))
 							<div class="bg-white py-2 collapse-inner rounded">
 								<h6 class="collapse-header">Class Details:</h6>
 									<a class="collapse-item" href="course.php">Add Courses</a>
-										<a class="collapse-item" href="manage_classes.php">Manage Course</a>
+										
 										<a class="collapse-item" href="shift.php">Add shift</a>
 										<a class="collapse-item" href="duration.php">Add duration</a>
 									
@@ -99,7 +100,8 @@ if(isset($_SESSION['username']))
 										<div class="bg-white py-2 collapse-inner rounded">
 											<h6 class="collapse-header">student Details:</h6>
 												<a class="collapse-item" href="approvestu.php">Approve Student</a>
-												
+												<a class="collapse-item" href="feedback.php"> Feedback</a>
+											<a class="collapse-item" href="studview.php">Generate Report</a>
 												
 											
 										</div>
@@ -121,9 +123,9 @@ if(isset($_SESSION['username']))
 										<h6 class="collapse-header">Teacher Details:</h6>
 											<a class="collapse-item" href="teachersadm.php">Add Teachers</a>
 											<a class="collapse-item" href="assign_teachers_adm.php">Assign Teachers</a>
-											<a class="collapse-item" href="manage_teach.php">Manage Teachers</a>
+											<a class="collapse-item" href="approve_teach_leave.php">approve leave</a>
 											<a class="collapse-item" href="qualification.php">Add Qualification</a>
-											<a class="collapse-item" href="manage_qual.php">Manage Qualification</a>
+											
 											
 									</div>
 								</div>
@@ -134,17 +136,14 @@ if(isset($_SESSION['username']))
 				<li class="nav-item">
 					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
 						<i class="fas fa-skating"></i>
-						<span>Dance Booking</span>
+						<span>Gallery</span>
 					</a>
 					<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 						<div class="bg-white py-2 collapse-inner rounded">
 							<h6 class="collapse-header">Dancetypes::</h6>
-								<a class="collapse-item" href="dancestyle.php">Add Course</a>
+								<a class="collapse-item" href="gallery.php">gallery</a>
 							
-								<a class="collapse-item" href="batch.php">Add Batch</a>
 								
-								
-								<a class="collapse-item" href="approvebook.php">approve booking</a>
 						</div>
 					</div>
 				</li>
@@ -157,32 +156,8 @@ if(isset($_SESSION['username']))
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-<li class="nav-item">
-					<a class="nav-link" href="payment.php">
-						  <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-						  <span>Payement</span>
-					</a>
-				</li>
-            <!-- Nav Item - Charts -->
+         
+
           
 
 
@@ -201,8 +176,6 @@ if(isset($_SESSION['username']))
             
 
         </ul>
-        
-
       
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -230,7 +203,7 @@ if(isset($_SESSION['username']))
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><img class="img-profile rounded-circle" src="s3.png">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 										<?php
 											echo $temp;
 										?></span>
@@ -264,27 +237,36 @@ if(isset($_SESSION['username']))
                     </ul>
 
                 </nav>
-                <div class="container">
+			
+				
 
-        
-	   <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
-	   <div class="container">
-	    <div class="row mt-5">
-	      <div class="col-md-6 col-xl-5 mb-4">
-              <!--Form-->
-              <div class="card wow fadeInRight" data-wow-delay="0.3s">
-                <div class="card-body">
-                  <!--Header-->
-                  <div class="text-center">
-                    <h3 class="white-text">
-					 <form action="add_profile_admin.php" method="POST">
-                            <table class="table table-bordered" id="dataTable">
-                      <i class="fas fa-user white-text"></i> change password:</h3>
-                    <hr class="hr-light">
-                  </div>
-				   <div class="loginbox">
-				    <form action="add_profile_admin.php" method="POST" enctype="multipart/form-data">
-					<?php
+                    <div class="container-fluid">
+                        <h1 class="mt-4">Add Courses</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Dancecourse</li>
+                        </ol>
+  <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                
+                    
+					
+					
+	
+	 
+                        <div class="card-header py-3">
+                            <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Change Password</h1>
+                                    </div>
+                        </div>
+                       
+                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"  border="1" style="font-family:Georgia, Garamond, Serif;color:navy;">
+								 
+								 <div class="card-body" style="background: LightGray">
+								<form action="add_profile_admin.php" method="POST">
+								 <?php
 													include("dbconnection.php");
 													$sq="select * from tbl_login where username='$temp'";
 													$res=mysqli_query($con,$sq);
@@ -294,9 +276,9 @@ if(isset($_SESSION['username']))
 													$c=mysqli_query($con,$sql);
 													$result=mysqli_fetch_array($c);
 													?>
-			 <div class="navigation ">
-			 <p style="color:black;font-size:20px">
-			<input type="text"  class="form-control"  name="name"  autofocus="autofocus" required  placeholder="UserName"  value="<?php echo $a['username']; ?>">
+                                   
+		<br><label for="exampleInputEmail1">User Name</label>								
+	<input type="text"  class="form-control"  name="username"  autofocus="autofocus" required  placeholder="UserName"  value="<?php echo $a['username']; ?>">
     <br><label for="exampleInputEmail1">Old Password</label>
 	
 		
@@ -306,18 +288,46 @@ if(isset($_SESSION['username']))
 												
     <input type="password"   required class="form-control"   autofocus="autofocus" required  placeholder="Old Password" name="old" id="old" value="<?php echo $a['password']; ?>">
     <br><label for="exampleInputEmail1">New Password</label>
-    <input type="password" class="form-control" name="new" id="pawd" placeholder="New Password" onchange="validpaswd()" autofocus="autofocus" required>
+    <input type="password" class="form-control" name="new" id="pawd" placeholder="New Password" onblur="validpaswd()" autofocus="autofocus" required>
     <br><label for="exampleInputEmail1">Confirm Password</label>
-    	<input type="password" name="cnew" class="form-control" id="cpawd" placeholder="Confirm New Password" onchange="validcpass()" autofocus="autofocus" required>
+    	<input type="password" name="cnew" class="form-control" id="cpawd" placeholder="Confirm New Password" onblur="validcpass()" autofocus="autofocus" required>
+								
+								
+								
+								<div class="text-center mt-4"><center>
+										<input type="submit" id="bt" value="update" name="update" class="btn btn-primary">
+	                                 <input type='submit' value='cancel'  class="btn btn-primary"></center>
+										
+					
+									</div>
+
+															
+															
+															
+															</div>
+                            </div>
+                        </div></div>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 
 
-<div class="modal-footer">
-<button type="button" class="btn btn-default" data-dismiss="modal">
-Close
-<span class="glyphicon glyphicon-remove-sign"></span>
-</button>
-<input type="submit" name="update" value="Update" class="btn btn-success">
-</div>
 </form>
 </div>
 </div>
@@ -328,9 +338,7 @@ Close
 			
 			
 		<script>
-		
-		
-		  function validpaswd()
+		function validpaswd()
    {
     var pass=document.getElementById("pawd").value;
 	var passexp =/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
@@ -351,6 +359,8 @@ Close
 	 document.getElementById("cpawd").value="";
 	}
    }
+   
+		
 	
    </script>
 
@@ -371,47 +381,7 @@ Close
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
-<script>
 
-function validname()
-   {
-    var name=document.getElementById("nam").value;
-	var letters =/^[a-zA-Z ]*$/;
-	if(!name.match(letters))
-	{
-	 alert("Please enter your name correctly");
-	 document.getElementById("nam").value="";
-	}
-   }
-
-
-
-
-
-
-function validpaswd()
-   {
-    var pass=document.getElementById("pass").value;
-	var passexp =/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-        if(!pass.match(passexp))
-	{
-	 alert("Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters");
-	 document.getElementById("pawd").value="";
-	}
-   }
-   
-   function validcpass()
-   {
-    var pass=document.getElementById("new").value;
-	var cpass=document.getElementById("cpawd").value;
-	if(!(pass==cpass))
-	{
-	 alert("Password not matching");
-	 document.getElementById("cpawd").value="";
-	}
-   }
-   </script>	
-		
  
 
   <!-- Bootstrap core JavaScript-->

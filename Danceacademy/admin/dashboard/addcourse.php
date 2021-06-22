@@ -4,7 +4,7 @@ include("dbconnection.php");
 
 $course_name=$_POST["dname"];
 $fee=$_POST["fees"];
-$date=$_POST["doc"];
+
 
 $status=1;
 
@@ -22,7 +22,7 @@ location.href="course.php";
 }
 else
 {
-$sql="insert into tbl_course(course_name,fee,date,status) values ('$course_name','$fee','$date','$status')";
+$sql="insert into tbl_course(course_name,fee,status) values ('$course_name','$fee','$status')";
 
 if(mysqli_query($con,$sql))
 {

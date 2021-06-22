@@ -23,7 +23,96 @@
 <script src="js/TMForm.js"></script>
 <script src="js/modal.js"></script>
 
+ <style>
+	
+	 h4 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color:purple;
+   font-color: purple;
+    text-decoration: underline overline;
+	font-weight: 900;
+    margin-bottom: 30px;
+  }
+   h5 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color:purple;
+   font-color: purple;
+  
+	font-weight: 900;
+    margin-bottom: 30px;
+  }
+  
+   h7 {
+    font-size: 30px;
+    text-transform: uppercase;
+    color:purple;
+	  text-align:center;
+   font-color: purple;
+  background: url("Images/p12.jpg");
+	font-weight: 900;
+    margin-bottom: 30px;
+  }
 
+   P {
+    font-size: 22px;
+  text-align:justify;
+    color:black;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+	  .container {
+			margin-top: 40px;
+		}
+		.btn-primary {
+			width: 100%;
+		}
+	.panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-head {
+    color: #fff !important;
+    background-color: #af9aae !important;
+	text-transform: uppercase;
+    padding: 9px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  
+
+.rd-navbar-sidebar .rd-navbar-nav > li > .rd-navbar-submenu-toggle {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    -webkit-transition: .3s transform;
+    transition: .3s transform;
+    cursor: pointer;
+    margin-left: 2px;
+    color: #3a3a3b;
+}
+
+
+ i.custom {font-size: 1em; color: gray;}
+ 
+ ul.a {
+  list-style-image: url('Images/l1a.png');
+   list-style-position: inside;
+
+}
+
+   
+</style>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -57,23 +146,21 @@
         <div class="grid_12">
 		<ul class="nav navbar-right">
 			<li class="nav navbar-right"><a href="studreg.html">
-				<button type="button" class="btn btn-success">Sign up</button></a>
+				<button type="button" class="btn btn-success">SIGN UP</button></a>
 			</li>
 			<li class="nav navbar-right"><a href="login.php">
-				<button type="button" class="btn btn-success">Sign In</button></a></li>
+				<button type="button" class="btn btn-success">SIGN IN</button></a></li>
 	  
-		</ul><div class="navbar-header"><img src="user/images/P51.jpg">
-        
-			<a class="navbar-brand" href="home.html"></a>
-		</div>	
-		    </div>
-    <div class="clear"></div>
-  </div>
+		</ul>
+ 
 		
-   </div>
-   </div>
-<div class="main">
-
+		<div class="navbar-header"> <img src="Images/p777c.jpg">
+        
+			<a class="navbar-brand" href="index.php"></a>
+			
+		</div></div></div></div></div>
+		
+  
   <section id="stuck_container">
   <div class="container_12">
         <div class="grid_12">
@@ -81,95 +168,99 @@
   
           <div class="navigation ">
             <nav>
-              <ul class="sf-menu">
+               <ul class="sf-menu">
                <li><a href="home.html">Home</a></li>
                <li><a href="about.php">About</a></li>
-              <li><a href="classes.html">our classes</a></li>
-                <li><a href="staff.html">Instructors</a></li>
-                <li class="current"><a href="contacts.php">Contacts</a></li>
-             </ul>
+              <li><a href="classes.html">Our classes</a></li>
+               <li><a href="staff.php">Our Team</a></li>
+
+              <li class="current"><a href="contacts.php">Contacts</a></li>
+			<li><a href="gallery.html">Gallery</a></li>
+			
+          </ul> 
             </nav>
             <div class="clear"></div>
           </div>
          <div class="clear"></div>
-     </div>
+     </div> </div>
      <div class="clear"></div>
     </div>
-</header>
+	</section>
 <!--=====================
           Content
 ======================-->
-<section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - October 06, 2014!</div>
+<br>
+<br>
+
   <div class="container_12">
     <div class="grid_12">
-      <h2 class="inset__1">Find Us</h2>
+      <h4>Find Us</h4>
       <div class="map">
         <figure class="">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d24214.807650104907!2d-73.94846048422478!3d40.65521573400813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1395650655094" style="border:0"></iframe>
+		<iframe width="520" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&height=400&hl=en&q=kochi%20kochi+(kochi)&t=&z=12&ie=UTF8&iwloc=B&output=embed"></iframe> <a href='https://www.embedmap.net/'>embed google maps in website</a> 
+		<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=a2987c5533d75298eb23971fa060688e7415c4e4'></script>
+        
         </figure>
       </div>
-    </div>
-    <div class="grid_5">
+    </div>    </div> 
+	
+	
+	<section id="content">
+<div style=' clear: both; font-family:georgian;font-size:17px;position: relative;'>
 
-	 <h5 style="color:#a179a6;text-align:center;font-size:30px">RHYTHM</h5>
-     <center>
-    PO BOX Collins Street West <br> 
+  <div class="container_12">
+    <h2 style=" text-align: center"><div class="panel-heading">..WE..</div></h2>  
+	<br>
+      <img src="images/p76.jpg" alt="" class="fleft"><div class="navigation ">
+            <nav>
+              <ul class="sf-menu">
+     <p class="color1"><a href="#"> </a></p></ul></div>
+      <div class="cmsmasters_column one_half">
+
+
+</div> 
+
+ <div class="navigation ">
+ <ul style="font-size:20px;color:black;text-align:justify;" class="a">
+ <p style="text-align:center"> PO BOX Collins Street West <br> 
 	Palkulangara,<br> 
-	Thiruvananthapuram - 695 024 <br>
+	kochi - 695 024 <br>
 	Phone: +91 80781 59256<br>
 	  Mobile: +91 93877 39013<br>
-	  rhythm@gmai.com
-    </div>
-    <div class="grid_6 prefix_1">
-      <h4 class="color1 inset__1">CONTACT FORM</h4>
-      <form id="contact-form">
-          <div class="contact-form-loader"></div>
-          <fieldset>
-            <label class="name">
-              <input type="text" name="name" placeholder="Name:" value="" data-constraints="@Required @JustLetters" onblur="validname()"required />
-              <span class="empty-message">*This field is required.</span>
-              <span class="error-message">*This is not a valid name.</span>
-            </label>
-            <label class="email">
-              <input type="text" name="email" placeholder="E-mail:" value="" data-constraints="@Required @Email" onblur="validmail()"required />
-              <span class="empty-message">*This field is required.</span>
-              <span class="error-message">*This is not a valid email.</span>
-            </label>
-            <label class="phone">
-              <input type="text" name="phone" placeholder="Phone:" value="" data-constraints="@Required @JustNumbers"onblur="validate2()"required />
-              <span class="empty-message">*This field is required.</span>
-              <span class="error-message">*This is not a valid phone.</span>
-            </label>
-            <label class="message">
-              <textarea name="message" placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
-              <span class="empty-message">*This field is required.</span>
-              <span class="error-message">*The message is too short.</span>
-            </label>
-		
-            
-          </fieldset>
-		  <div class="ta__right">
-              <a href="#" class="link-1" data-type="reset">clear</a>
-              <a href="#" class="link-1" data-type="submit">send</a>
-            </div>
-          <div class="modal fade response-message">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                  You message has been sent! We will be in touch soon.
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-    </div>
+	  rhythm@gmai.com</p></center>
+</div>
+
+
+
+</div>
+
+</div>
+
+</ul>
+
+
+      
+   
     <div class="clear"></div>
-  </div>
+
 </section>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 
+	
+
+	   <div class="navigation ">		 
+<div class="panel-head"><P style="font-size:25px;color:white;text-align:center">"DANCING IS CREATING A SCULPTURE THAT IS VISIBLE ONLY FOR A MOMENT"</p></center></div>
+ </div> 
+ <BR>
 <!--==============================
               footer_top
 =================================-->
@@ -179,7 +270,7 @@
 	  <div class="grid_4">
 	 <div style=' clear: both; font-family:georgian;font-size:17px;position: relative;'>
       <address class="address-1"> 
-	  <div class="fa fa-home"></div>PO BOX Collins Street West <br> Palkulangara,<br> Thiruvananthapuram - 695 024 <br>Phone: +91 80781 59256<br>
+	  <div class="fa fa-home"></div>PO BOX Collins Street West <br> Palkulangara,<br> kochi - 695 024 <br>Phone: +91 80781 59256<br>
 	  Mobile: +91 93877 39013<br>rhythm@gmai.com</address>
     </div>
 	</div>  
@@ -190,16 +281,12 @@ Sunday 11am-6pm</address>
 	 </h6>
 	 </div>
 
- <div class="grid_4 fright">
-      <div class="socials">
-        <a href="#">facebook</a>
-        <a href="#">twitter</a>
-        <a href="#">google+</a>
-      </div>
-    </div>
+
     <div class="clear"></div>
+	
   </div>
 </div>
+</form>
 <!--==============================
               footer
 =================================-->
@@ -213,57 +300,9 @@ Sunday 11am-6pm</address>
   </div>
 </footer>
 <a href="#" id="toTop" class="fa fa-angle-up"></a>
+
 </body>
-<script>
-function validname()
-   {
-    var name=document.getElementById("nam").value;
-	var letters =/^[a-zA-Z ]*$/;
-	if(!name.match(letters))
-	{
-	 alert("Please enter your name correctly");
-	 document.getElementById("nam").value="";
-	}
-   }
-   
-   
-   function validmail()
-   {
-    var email=document.getElementById("mail").value;
-	var mailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	if(!email.match(mailexp))
-	{
-	 alert("Please enter your email address correctly");
-	 document.getElementById("mail").value="";
-	 document.getElementById("bt").focus();
-	}
-   }
-    function validate2()
-{
-var phone = document.getElementById("phno").value;
-var phn=/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/;
-if (phone == "")
-    {
-      alert("Phone number can't be blank ");
-      count++;
-      return false;
-    }
-else if(phone.length!=10)
-{
-alert("Enter your phone number correctly!");
-count++;
-return false;
-}
-else if(!phone.match(phn))
-{
-alert("Please enter valid number");
-count++;
-return false;
-}
-else
-{
-count=0;
-}
-}
-   </script>
+
+
+
 </html>

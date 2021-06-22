@@ -47,7 +47,7 @@ $result=mysqli_fetch_array($c);
      
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+          <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -80,7 +80,7 @@ $result=mysqli_fetch_array($c);
 							<div class="bg-white py-2 collapse-inner rounded">
 								<h6 class="collapse-header">Class Details:</h6>
 									<a class="collapse-item" href="course.php">Add Courses</a>
-										<a class="collapse-item" href="manage_classes.php">Manage Course</a>
+										
 										<a class="collapse-item" href="shift.php">Add shift</a>
 										<a class="collapse-item" href="duration.php">Add duration</a>
 									
@@ -108,7 +108,8 @@ $result=mysqli_fetch_array($c);
 										<div class="bg-white py-2 collapse-inner rounded">
 											<h6 class="collapse-header">student Details:</h6>
 												<a class="collapse-item" href="approvestu.php">Approve Student</a>
-											
+												<a class="collapse-item" href="feedback.php"> Feedback</a>
+											<a class="collapse-item" href="studview.php">Generate Report</a>
 												
 											
 										</div>
@@ -130,7 +131,7 @@ $result=mysqli_fetch_array($c);
 										<h6 class="collapse-header">Teacher Details:</h6>
 											<a class="collapse-item" href="teachersadm.php">Add Teachers</a>
 											<a class="collapse-item" href="assign_teachers_adm.php">Assign Teachers</a>
-											
+											<a class="collapse-item" href="approve_teach_leave.php">approve leave</a>
 											<a class="collapse-item" href="qualification.php">Add Qualification</a>
 											
 											
@@ -143,17 +144,14 @@ $result=mysqli_fetch_array($c);
 				<li class="nav-item">
 					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
 						<i class="fas fa-skating"></i>
-						<span>Dance Booking</span>
+						<span>Gallery</span>
 					</a>
 					<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 						<div class="bg-white py-2 collapse-inner rounded">
 							<h6 class="collapse-header">Dancetypes::</h6>
-								<a class="collapse-item" href="dancestyle.php">Add Course</a>
+								<a class="collapse-item" href="gallery.php">gallery</a>
 							
-								<a class="collapse-item" href="batch.php">Add Batch</a>
 								
-								
-								<a class="collapse-item" href="approvebook.php">approve booking</a>
 						</div>
 					</div>
 				</li>
@@ -166,32 +164,8 @@ $result=mysqli_fetch_array($c);
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-<li class="nav-item">
-					<a class="nav-link" href="payment.php">
-						  <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-						  <span>Payement</span>
-					</a>
-				</li>
-            <!-- Nav Item - Charts -->
+         
+
           
 
 
@@ -210,8 +184,6 @@ $result=mysqli_fetch_array($c);
             
 
         </ul>
-        
-
       
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -239,7 +211,7 @@ $result=mysqli_fetch_array($c);
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><img class="img-profile rounded-circle" src="s3.png">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 										<?php
 											echo $temp;
 										?></span>
@@ -249,18 +221,11 @@ $result=mysqli_fetch_array($c);
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="profile.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
+                               
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                   

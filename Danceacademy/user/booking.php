@@ -19,7 +19,7 @@ if(isset($_SESSION['username']))
 <link rel="stylesheet" href="css/style.css">
 
  
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 
  
   
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -33,8 +33,6 @@ if(isset($_SESSION['username']))
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>Booking</title>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
  <link href="../../css/bootstrap.min.css" rel="stylesheet">
  <link href="../../css/mdb.min.css" rel="stylesheet">
@@ -104,11 +102,6 @@ if(isset($_SESSION['username']))
   
 
 
-  .card {
-    background-color:rgb(255, 255, 255,0.4);
-	 
-  }
-
 .loginbox input[type="text"], input[type="password"], input[type="number"], input[type="email"],input[type="submit"],input[type="reset"],input[type="menu"]
 {
 border:none;
@@ -122,21 +115,74 @@ padding: 8px 20px;
 font-size:16px;
 }
 
+.panel-heading {
+    color: #fff !important;
+	text-transform: uppercase;
+    background-color: #f4511e !important;
+    padding: 10px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-head {
+    color: #fff !important;
+    background-color: #af9aae !important;
+	text-transform: uppercase;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+ 
 .dropdown {
   position: relative;
   display: inline-block;
-  border:none;
-min-width: 160px;
-border-bottom:1px solid #fff;
-outline:none;
-height: 40 px;
-color:black;
- text-align: center;
-  border-radius: 0px;
-font-size:25px;
-
 }
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:white;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+ 
+  width: 100%
+}
+
+.dropdown-content a {
+  color: black;
+ font-size: 18px;
+ line-height: 1.9;
+  text-decoration: none;
+  display: block;
+}
+
+.rd-navbar-sidebar .rd-navbar-nav > li > .rd-navbar-submenu-toggle {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    -webkit-transition: .3s transform;
+    transition: .3s transform;
+    cursor: pointer;
+    margin-left: 2px;
+    color: #3a3a3b;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+ i.custom {font-size: 1em; color: gray;}
+ 
+ ul.a {
+  list-style-image: url('Images/l1a.png');
+   list-style-position: inside;
+
+}
 
 input[type=submit] {
   background-color:#e0a800 ;
@@ -159,7 +205,10 @@ input[type=reset] {
 
 
 
-
+  .card {
+    background-color:#808080;
+	 
+  }
 
 
 
@@ -167,123 +216,30 @@ input[type=reset] {
 
 
   </style>
+
 <body class="page1" id="top">
 <!--==============================
               header
 =================================-->
 
 <div class="main">
+
  <div class="container_12">
+ 
 <div class="container-fluid">
-<div class="grid_12">
-		<div class="navbar-header"> <img src="images/p51.jpg">
+
+	<div class="container p-3 my-3 border">
+	
+        <div class="grid_12">
+		
+		<div class="navbar-header"> <img src="../images/p777c.jpg">
         
 			<a class="navbar-brand" href="index.php"></a>
+			
 		</div>
 		
 			<ul class="nav navbar-right">
- 
-           <li id="dropdown-user">
-
-                        <a href="#" data-toggle="dropdown" class="-toggle text-center" aria-expanded="false">
-                          
-                             <br><img class="img-circle img-user media-object" src="images/i1.jpg" height="30" width="30">
-                                                         
-                           <div class="navigation ">
-						   		 <div style=' clear: both; font-size:19px;position: relative;'>
-                            <div class="username hidden-xs">HELLO 
-							<?php
-	                               echo strtoupper ($temp);
-	                                ?></div>
-                        </a> 
-						
-	
-       
-    
-      
-	  
-        
-
-		
-		 
-       
-  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-    <ul class="head-list" >
-		  <p style="font-size:18px">
-           <ul class="head-list" >
-							
-                                <li>
-								<div class="pad-all text-left">
-								<a href="Profile.php"><p style="font-size:16px">
-                                  &nbsp;  <i class="fas fa-user-circle"></i>
-                               profile</p>
-                                    </a></div>
-									</li>  <li>
-								<div class="pad-all text-left">
-                                    <a href="chgpassusr.php"><p style="font-size:14px"> &nbsp; <i class="fa fa-lock"></i>
-                               Change Password</p>
-                                    </a></div>
-									</li>  <li>
-								<div class="pad-all text-left">
-                                    <a href="logout.php"><p style="font-size:18px"> &nbsp; <i class="fas fa-sign-out-alt"></i>
-                               Logout</p>
-                                    </a></div>
-									</li>
-									
-									
-                               
-                            </ul>
-                          </ul>
-                          
-		  <br>
-		</p>
-          </div> </div></div>
-      </li></ul>
-        </div></div>
-   <section id="stuck_container">
-  <div class="container_12">
-        <div class="grid_12">
-  
-  
-          <div class="navigation ">
-            <nav>
-              <ul class="sf-menu">
-               <li><a href="index.php">Home</a></li>
-               <li><a href="about.php">About</a></li>
-              <li><a href="classes.php">our classes</a></li>
-               <li><a href="staff.php">Instructors</a></li>
-               <li><a href="contacts.php">Contacts</a></li>
-             </ul>
-            </nav>
-            <div class="clear"></div>
-          </div>
-         <div class="clear"></div>
-     </div>
-     <div class="clear"></div>
-    </div>
-		
-
-	 <form action="addbking.php" method="POST" enctype="multipart/form-data">
-	  <div class="view" style="background-image: url('images/p763.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-	 
-	   <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
-	   <div class="container">
-	    <div class="row mt-5">
-	      <div class="col-md-6 col-xl-5 mb-4">
-              <!--Form-->
-              <div class="card wow fadeInRight" data-wow-delay="0.3s">
-                <div class="card-body">
-                  <!--Header-->
-                  <div class="text-center">
-                    <h3 class="white-text">
-					 <form action="#" method="POST">
-                            <table class="table table-bordered" id="dataTable">
-                      <i class="fas fa-user white-text"></i> Booking</h3>
-                    <hr class="hr-light">
-                  </div>
-				   <div class="loginbox">
-				    <form action="addbking.php" method="POST" enctype="multipart/form-data">
-					<?php
+ <?php
 													include("dbconnection.php");
 													$sq="select * from tbl_login where username='$temp'";
 													$res=mysqli_query($con,$sq);
@@ -294,79 +250,123 @@ input[type=reset] {
 													$result=mysqli_fetch_array($c);
 													?>
 
+           <li id="dropdown-user">
+
+                        <a href="#" data-toggle="dropdown" class="-toggle text-center" aria-expanded="false">
+                          
+                             <br><img class="img-circle img-user media-object"  src="../user/upload/<?php echo $result['file']; ?>"height="60" width="60">
+                                                         
+                           <div class="navigation ">
+						   		 <div style=' clear: both; font-size:18px;position: relative;  text-transform: uppercase;'>
+								 
+                           <?php echo $result['name']; ?>
+							</div>
+                        </a> 
+						
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+		  <p style="font-size:18px">
+              <a href="" class="dropdown-item" data-toggle="modal" data-target="#myModal" >&nbsp &nbsp;<i class="fas fa-user-circle"></i> <a href="viewprofile.php">Profile</a><br>
+              <a href="" class="dropdown-item" data-toggle="modal" data-target="#myTodal">&nbsp &nbsp;<i class="fa fa-lock"></i> <a href="chgpassusr.php">Change Password</a><br>
+            
+          </div> </div></div>
+      </li></ul>
+        </div></div></div></div>
+             <section id="stuck_container">
+  <div class="container_12">
+        <div class="grid_12">
+  
+  
+          <div class="navigation ">
+            <nav>
+               <ul class="sf-menu">
+               <li ><a href="index.php">Home</a></li>
+               <li><a href="about.php">About</a></li>
+              <li><a href="classes.php">Our Classes</a></li>
+			   <?php
+								include("dbconnection.php");	
+
+                            $sq = "select * from tbl_login where username = '$temp'";
+
+  $rs = mysqli_query($con,$sq);
+  $a=mysqli_fetch_array($rs);
+if($a['book_status']==0 || $a['book_status']=='')
+{
+
+  echo "<li><a href='booking.php?x=".$a['login_id']."'>Course Materials</a></li>";
 
 
+}
+else{
+	 echo "<li ><a href='course_material_user.php'>Course Materials</a></li>";
 
-
-	                       <div class="input-group form-group">
-												<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="fa fa-birthday-cake"></i>
-												</span>	
-														</div>
-														
-										<input placeholder="Date of addmission" min="2010-01-01"  max="2080-01-01" required class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" value="" name="doa"/>	
-										
-											</div>
-											
-											
-											
-											
-											
-											
-
-                                       <div class="input-group form-group">
-												<div class="input-group-prepend">
-													<span class="input-group-text">
-													<i class="fa fa-child"></i>
-													</span>
-												</div>
-												
-				   <select  id="ctrSubDropDownLong" name="course" value="" class="form-control" required>
-														<option value="">Select course</option>
-<?php $query =mysqli_query($con,"SELECT * FROM tbl_course");
-                        while($row=mysqli_fetch_array($query))
-                        { ?>
-                        <option value="<?php echo $row['course_name'];?>"><?php echo $row['course_name'];?></option>
-                        <?php
-                        }
-                        ?>
-                        </select>
+}
+	 ?>
+			  	  <li class=" dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Leave
+        </a>
+        <div class="dropdown-content " aria-labelledby="navbarDropdown">
+       <a href="apply_leave_usr.php">Apply Leave</a>
+    <a href="leave_status_student.php">Leave Status</a>
+  
+			   
+              
+               <li><a href="contacts.php">Contacts</a></li>
+			      <li><a href="gallery.php">Gallery</a></li>
 				   
-					</div>  
-				   
-				   <div class="input-group form-group">
-												<div class="input-group-prepend">
-													<span class="input-group-text">
-													<i class="fa fa-calendar"></i>
-													
-													</span>
-												</div>
-				   
-				   
-				   <select  id="ctrSubDropDownLong" name="duration" value="" class="form-control" required>
-														<option value="">Select duration</option>
-<?php $query =mysqli_query($con,"SELECT * FROM tbl_duration");
-                        while($row=mysqli_fetch_array($query))
-                        { ?>
-                        <option value="<?php echo $row['duration'];?>"><?php echo $row['duration'];?></option>
-                        <?php
-                        }
-                        ?>
-				   
-				     </select>
-				   	</div>  
-					
-					
-					 <div class="form-group input-group">
-										<div class="input-group-prepend">
-											<span class="input-group-text"> 
-										<i class="fa fa-clock-o"></i>
-											</span>
-										</div>
-										
-										<select  id="ctrSubDropDownLong" name="shift" value="" class="form-control" required>
-														<option value="">Select time</option>
+			   
+             </ul>
+            </nav>
+            <div class="clear"></div>
+          </div>
+         <div class="clear"></div>
+     </div>
+     <div class="clear"></div>
+    </div> </div>
+		</section>
+<br><br><br>
+<form action="addbking.php" method="POST" enctype="multipart/form-data">
+	<div class="container_12">
+		<div class="grid_12">
+			<div class="navigation ">
+			<h2><div class="panel-heading"> 
+				<center>...CLASSES...</center></div></h2></div>
+					<div class="card o-hidden border-0 shadow-lg my-5">
+						<div class="row">
+							<div class="col-lg-5 d-none d-lg-block bg-register-image"><img src="../Images/p12.jpg"></div>
+								<div class="col-lg-7">
+									<div class="card wow fadeInRight" data-wow-delay="0.3s">
+									<br>
+										<div class=" form-group">	
+											<div class="navigation "><label>COURSE</label></div>										   
+												<select  id="ctrSubDropDownLong" id="exampleInputEmail" name="course" value="" class="form-control form-control-user" required>
+															<option value="">----</option></p>
+															<?php $query =mysqli_query($con,"SELECT * FROM tbl_course");
+																while($row=mysqli_fetch_array($query))
+																	{ ?>
+																<option value="<?php echo $row['course_name'];?>"><?php echo $row['course_name'];?></option>
+															<?php
+																	}
+																	?>
+												</select>
+										</div>  	 
+										<div class="form-group">
+											<div class="navigation "> <label>SELECT COURSE DURATION</label></div>  
+												<select  id="ctrSubDropDownLong" name="duration" value="" class="form-control" required>
+														<option value="">--  --</option>
+															<?php $query =mysqli_query($con,"SELECT * FROM tbl_duration");
+															while($row=mysqli_fetch_array($query))
+																{ ?>
+														<option value="<?php echo $row['duration'];?>"><?php echo $row['duration'];?></option>
+															<?php
+																}
+																	?>
+												</select>
+										</div>  
+										<div class="form-group">
+											<div class="navigation ">   <label>TIME</label> </div> 
+												<select  id="ctrSubDropDownLong" name="shift" value="" class="form-control" required>
+														<option value="">--</option>
 <?php $query =mysqli_query($con,"SELECT * FROM tbl_shift");
                         while($row=mysqli_fetch_array($query))
                         { ?>
@@ -375,93 +375,40 @@ input[type=reset] {
                         }
                         ?>
                         </select>
-					
-						</div>  
-					
-				   
-				   
-				   <div class="form-group input-group">
-										<div class="input-group-prepend">
-											<span class="input-group-text"> 
-											<i class="fa fa-phone"></i>
-											</span>
+										</div> 
+										<div class="form-group ">
+											<div class="navigation ">   <label>GUARDIAN NUMBER</label> </div> 
+												<input type='number' required class="form-control" placeholder="Enter guardian number" id="phno" value="" name="gudnum" onblur="validate2()"required> 
 										</div>
-										
-										
-										
-										
-										 <input type='number' required class="form-control" placeholder="Enter guardian number" id="phno" value="" name="gudnum" onblur="validate2()"required> 
-										
-									</div> 
-				   
-				   
-				     <div class="form-group input-group">
-										<div class="input-group-prepend">
-											<span class="input-group-text"> 
-											
-<i class="fa fa-calendar"></i>
-											</span>
+						
+										<div class="form-group ">
+							      			<div class="navigation ">  <label>DANCE EXPERIENCE</label> </div> 
+												<input type='number' required class="form-control" placeholder="Dance experience year" id="num" value="" name="expyr" onblur="validnumber()"required> 
 										</div>
-										
-										
-										
-										
-										 <input type='number' required class="form-control" placeholder="Dance experience year" id="num" value="" name="expyr" onblur="validnumber()"required> 
-										
-									</div> 
-									
-									
-									
-									
-									
-									
-									
-				   <div class="input-group form-group">
-            <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fa fa-certificate"></i></span>
-            </div>
-
-            <input class="form-control" type="file" name="sfile" id="file1" placeholder="Upload your id Proof" onchange="valproof()" required/>
-
-            </div>
-				 
-				   
-				   
-				   
-				   
-                 
-									<div class="text-center mt-4"><center>
-										<input type="submit" id="bt" value="save" name="Submit" class="btn btn-secondary">
-	                                 <input type='reset' value='RESET' onclick='location.reload()' class="btn btn-secondary"></center>
-										<hr class="hr-light mb-3 mt-4">
-					
+										<div class="input-group form-group">
+											<label><i><span class="input-group-text">
+												<div class="navigation "> <b>YOUR ID PROOF</b></p></span></label>
+													  <input class="form-control" type='file' id="img" name="sfile" accept="image/*"></button>
+                             					 </div>
+										</div>
+            						
+											<br>
+										<div class="text-center mt-4">
+										<center><input type="submit" id="bt" value="PAY NOW" name="Submit" class="btn btn-secondary">  </center>
+										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-					</div></div></div></div>
-				</div>
-		
-			</form>
-			
-			
-			
+								</div>	
+						</div>	
+					</div>
+		</div>
+	</div>					
+ </section>					
+	<div class="clear"></div>								
+       <div class="clear"></div>                             
+<br><br>
 
+<script>
 
-			
-			
-		<script>
-function validname()
-   {
-    var name=document.getElementById("nam").value;
-	var letters =/^[a-zA-Z ]*$/;
-	if(!name.match(letters))
-	{
-	 alert("Please enter your name correctly");
-	 document.getElementById("nam").value="";
-	}
-   }
-   
    
   function validnumber()
    {
@@ -507,14 +454,6 @@ count=0;
 }
 
 
-function validate() 
-{
-if( document.form1.quali.value == "-1" )
-   {
-     alert( "Please select qualification!" );
-     return false;
-   }
-}
 
 function valproof()
       {
@@ -526,26 +465,84 @@ function valproof()
       document.getElementById("file1").value="";
       }
       }
-
-
-
-
-
-
-
-
-
-
    </script>	
-		
-	
-   </div>
 
-</div>
+
+
+
+
+
+
+
+
+
+   
+		
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
-</body>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+   <div class="navigation ">		 
+<div class="panel-head"><center><P style="font-size:25px;color:white;text-align:center">"DANCE IS THE MOST FUNDAMENTAL OF ALL ART FORMS"
+</p></center></div>
+ </div> 
+      <div class="clear"></div>
+    <BR>
+
+
+<div class="footer-top"> 
+  <div class="container_12">
+	  <div class="sep-1"></div>
+	  <div class="grid_4">
+	 <div style=' clear: both; font-family:georgian;font-size:17px;position: relative;'>
+      <address class="address-1"> 
+	  
+	  <div class="fa fa-home"></div> <div class="navigation ">
+	  <p >PO BOX Collins Street West <br> Palkulangara,<br> kochi- 695 024 <br>Phone: +91 80781 59256<br>
+	  Mobile: +91 93877 39013<br>rhythm@gmai.com</address>
+    </div>
+	</div>  
+		  <div class="nav navbar-right">
+	<div class="footer-box span_1_of_4 col col-2">
+	
+	  <div style=' clear: both; font-family:georgian;font-size:17px;position: relative;'>
+
+	  <div class="navigation ">
+	 <address class="address-1"><b>Open Hours</b><br>Monday-friday 7am-6pm</address>
+	
+	 </div>
+</div></div>
+
+ 
+    <div class="clear"></div>
+  </div>
+</div></div></div>
+<!--==============================
+              footer
+=================================-->
+</div>
+<footer id="footer">
+  <div class="container_12">
+    <div class="grid_12">
+      
+    </div>
+    <div class="clear"></div>
+  </div>
+</footer>
+<a href="#" id="toTop" class="fa fa-angle-up"></a> 
+	
+	   
+  
+ </body>
 </html>
 <?php
 }

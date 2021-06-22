@@ -4,7 +4,6 @@ include("dbconnection.php");
 
 $password=$_POST["new"];
 $pass=md5($password);
-
 $a=$_SESSION['username'];
 $b="update tbl_login set password='$pass' where username='$a'";
 if(mysqli_query($con,$b))

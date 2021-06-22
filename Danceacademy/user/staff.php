@@ -55,7 +55,7 @@ $temp=$_SESSION['username'];
 	<div class="container p-3 my-3 border">
 	
         <div class="grid_12">
-		<div class="navbar-header"> <img src="images/p51.jpg">
+		<div class="navbar-header"> <img src="images/p777.jpg">
         
 			<a class="navbar-brand" href="index.php"></a>
 		</div>
@@ -87,7 +87,7 @@ $temp=$_SESSION['username'];
 		 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
 		  <p style="font-size:18px">
-              <a href="" class="dropdown-item" data-toggle="modal" data-target="#myModal" >&nbsp &nbsp<i class="fas fa-user-circle"></i> <a href="profile.php">Profile</a><br>
+              <a href="" class="dropdown-item" data-toggle="modal" data-target="#myModal" >&nbsp &nbsp<i class="fas fa-user-circle"></i> <a href="viewprofile.php">Profile</a><br>
               <a href="" class="dropdown-item" data-toggle="modal" data-target="#myTodal">&nbsp &nbsp<i class="fa fa-lock"></i> <a href="chgpassusr.php">Change Password</a><br>
               <a  href="logout.php" class="dropdown-item">&nbsp &nbsp<i class="fas fa-sign-out-alt"></i>Logout</a></p>
           </div> </div></div>

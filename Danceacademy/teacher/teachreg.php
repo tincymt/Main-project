@@ -4,11 +4,10 @@ if(isset($_SESSION['username']))
 {
 	$temp=$_SESSION['username'];
 	?>
-   
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home</title>
+<title>Edit Profile </title>
 <meta charset="utf-8">
 <meta name = "format-detection" content = "telephone=no" />
 <link rel="icon" href="images/favicon.ico">
@@ -89,7 +88,7 @@ if(isset($_SESSION['username']))
  {
    margin: 0;
    padding: 0;
-   background: url("p998.jpg");
+   background: url("p72.jpg");
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
@@ -100,7 +99,7 @@ if(isset($_SESSION['username']))
 
 
   .card {
-    background-color:rgb(255, 255, 255,0.4);
+    background-color:#bfbfbf;
 	 
   }
 
@@ -152,6 +151,15 @@ input[type=reset] {
   float: center;
 }
 
+
+
+
+
+
+
+
+
+
   </style>
 <body class="page1" id="top">
 <!--==============================
@@ -162,12 +170,44 @@ input[type=reset] {
 	
 		<div class="container_12">
 			<div class="grid_12">
-				 <img src="user/images/p51.jpg">
+				 <img src="../images/p777c.jpg">
            
-		</div>
+		</div></div></div>
+	  <section id="stuck_container">	
+		 <div class="container_12">
+        <div class="grid_12">
+          <div class="navigation ">
+		
+         
+            <nav>
+               <ul class="sf-menu">
+               <li><a href="../home.html">Home</a></li>
+               <li><a href="../about.php">About</a></li>
+              <li><a href="../classes.html">Our classes</a></li>
+               <li><a href="../staff.php">Our Team</a></li>
+
+               <li><a href="../contacts.php">Contacts</a></li>
+			<li><a href="../gallery.php">Gallery</a></li>
+			<li class="nav navbar-right"><a href="../login.php">
+				Sign  In</a>
+          </ul> 
+            </nav>
+            <div class="clear"></div>
+          </div>
+ <div class="clear"></div>
+          </div>
+         <div class="clear"></div>
+     </div>
+     <div class="clear"></div>
+    </div>
+  </section>
+   
+
+   
+
 
 	 <form action="addregteachers.php" method="POST" enctype="multipart/form-data">
-	  <div class="view" style="background-image: url('images/p11.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+	  <div class="view" style="background-image: url('../images/p99.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 	 
 	   <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
 	   <div class="container">
@@ -183,8 +223,7 @@ input[type=reset] {
                     <hr class="hr-light">
                   </div>
 				   <div class="loginbox">
-				   
-				   <?php
+				    <?php
 include("dbconnection.php");
 $sq="select * from tbl_login where username='$temp'";
 $res=mysqli_query($con,$sq);
@@ -209,7 +248,7 @@ $result=mysqli_fetch_array($c);
 												<i class="fa fa-home"></i>
 											</span>
 										</div>
-										<textarea cols='25' rows='4' required class="form-control" name="address"id="comment" placeholder="Your Address"></textarea>
+										<textarea cols='25' rows='4' required class="form-control" name="address"id="comment" placeholder="your address"></textarea>
 									</div>
 				
 									<div class="form-group input-group">
@@ -241,7 +280,7 @@ $result=mysqli_fetch_array($c);
 										
 										
 										
-										 <input type='number' required class="form-control" placeholder="Contact Number" id="phno" name="contactno" onblur="validate2()"required> 
+										 <input type='number' required class="form-control" placeholder="nontact number" id="phno" name="contactno" onblur="validate2()"required> 
 										
 									</div> 
 									
@@ -322,7 +361,7 @@ $result=mysqli_fetch_array($c);
 												<i class="fa fa-home"></i>
 											</span>
 										</div>
-										<textarea cols='25' rows='4' maxlength="1000" required class="form-control" name="description"id="comment" placeholder="Describe your self"></textarea>
+										<textarea cols='25' rows='4' maxlength="1000" required class="form-control" name="description"id="comment" placeholder="describe your self"></textarea>
 									</div>
 				
 				
@@ -334,26 +373,42 @@ $result=mysqli_fetch_array($c);
 												<i class="fa fa-user"></i>
 											</span>
 										</div>
-										<input type='text' required class="form-control" id="usr" name="username" placeholder="Enter your  current Username">
+										<input type='text' required class="form-control" id="usr" name="username" placeholder="enter your username">
 										
 									</div>
 									
 									
 									
 									
-									
-									
-									
-									
+									<div class="row">
+										<div class="col-xs-6 col-sm-6 col-md-6">
 											<div class="input-group form-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">
+														<i class="fa fa-lock"></i>
+													</span>
+												</div>
+												<input type='password' required class="form-control" id="pawd" name="password" placeholder="new password" onchange="validpaswd()">
+											
+											</div>
+										</div>  
+										<div class="col-xs-6 col-sm-6 col-md-6">	
+											<div class="input-group form-group">
+												<div class="input-group-prepend">
+												
+										<input type='password' required class="form-control" id="cpawd" name="confirm" placeholder="confirm password" onchange="validcpass()">
+											</div>
+										</div>
+									</div>			</div>	
 									
-									<div class="input-group-prepend">
-									<span class="input-group-text">
-									<i class="fa fa-image"></i>	</span>				
-									<button type="button" class="btn btn-secondary">
-									<input type='file' id="img" name="sfile" accept="image/*"></button>
-									</div>
-									</div>			
+									
+									 <div class="input-group form-group">
+            	<label><i><span class="input-group-text"><b>YOUR PHOTO</b></p></span></label>
+         
+            <input class="form-control" type='file' id="img" name="sfile" accept="image/*"></button>
+          
+            </div>
+										
 									
 									
 									
@@ -474,164 +529,6 @@ if( document.form1.quali.value == "-1" )
 </body>
 </html>
 
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
- 
-	<!--img src="images/p28.jpg" alt=""-->
-	
-	
-	
-	
-		 
-	
-	
-	
-     <!-- <div id="camera_wrap" class="">
-        <div data-src="images/p28.jpg" data-thumb="images/p28.jpg"></div>
-        <div data-src="images/p28.jpg" data-thumb="images/p28.jpg"></div>
-        <div data-src="images/p28.jpg" data-thumb="images/p28.jpg"></div>
-      </div-->
-    
-<!--=====================
-          Content
-======================-->
-<!--section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - October 06, 2014!</div>
-  <div class="container_12">
-    <div class="grid_12">
-      <img src="images/page1_img1.jpg" alt="" class="fleft">
-      <h2>The Way You Move </h2>
-      <p>Find more about this <a href="http://blog.templatemonster.com/free-website-templates/" rel="nofollow" class="color1">goodie</a> in the post on the blog. </p>
-      <p> <a href="http://www.templatemonster.com/properties/topic/education-books/" rel="nofollow" class="color1">Education website templates</a> are presented in the same name category at TemplateMonster.com. </p>
-      Amus at magna non nunc tristique rhoncusquam nibh antegestas id dictum
-      <br>
-      <a href="#" class="link-1">more</a>
-    </div>
-    <div class="grid_3">
-      <div class="banner">
-        <div class="maxheight">
-          <h4>News &amp; <br> Events</h4>
-          <a href="#" class="link-1">more</a>
-        </div>
-      </div>
-    </div>
-    <div class="grid_3">
-      <div class="banner">
-        <div class="maxheight">
-          <h4>Master <br> Classes</h4>
-          <a href="#" class="link-1">more</a>
-        </div>
-      </div>
-    </div>
-    <div class="grid_3">
-      <div class="banner">
-        <div class="maxheight">
-          <h4>Popular <br> Music</h4>
-          <a href="#" class="link-1">more</a>
-        </div>
-      </div>
-    </div>
-    <div class="grid_3">
-      <div class="banner">
-        <div class="maxheight">
-          <h4>Useful <br> Tips</h4>
-          <a href="#" class="link-1">more</a>
-        </div>
-      </div>
-    </div>
-    <div class="grid_6">
-      <h3>Recent Publications</h3>
-      <div class="grid_3 alpha">
-        <div class="block-1">
-          <h4 class="color1"><a href="#">How to Join</a></h4>
-          Amus at magna non nunc tristique rhoncus. Aliquam nibh antegestas id dictum acoodo
-          <br>
-          <a href="#" class="link-1">more</a>
-        </div>
-      </div>
-      <div class="grid_3 omega">
-        <div class="block-1">
-          <h4 class="color1"><a href="#">Our Styles</a></h4>
-          Amus at magna non nunc tristique rhoncus. Aliquam nibh antegestas id dictum acoodo
-          <br>
-          <a href="#" class="link-1">more</a>
-        </div>
-      </div>
-      <div class="grid_3 alpha">
-        <div class="block-1">
-          <h4 class="color1"><a href="#">Schedule</a></h4>
-          Remus at magna non nunc tristique rhoncus. Aliquam nibh antegestas id dictum acoodot
-          <br>
-          <a href="#" class="link-1">more</a>
-        </div>
-      </div>
-      <div class="grid_3 omega">
-        <div class="block-1">
-          <h4 class="color1"><a href="#">Flexibility &amp; Strength</a></h4>
-          Omus at magna non nunc tristique rhoncus. Aliquam nibh antegestas id dictum acoodoe
-          <br>
-          <a href="#" class="link-1">more</a>
-        </div>
-      </div>
-      <div class="clear"></div>
-    </div>
-    <div class="grid_5 prefix_1 gallery">
-      <a href="images/big1.jpg" class="gall_item">
-        <img src="images/page1_img2.jpg" alt="">
-        <div class="gall_bot">
-          <div class="fa fa-camera"></div>
-        </div>
-      </a>
-    </div>
-    <div class="clear"></div>
-  </div>
-</section>
-<div class="footer-top">
-  <div class="container_12">
-    <div class="grid_12">
-      <div class="sep-1"></div>
-    </div>
-    <div class="grid_4">
-      <address class="address-1"> <div class="fa fa-home"></div>28 Jackson Blvd Ste 1020 Chicago,  <br>
-IL 60604-2340</address>
-    </div>
-    <div class="grid_3">
-      <a href="#" class="mail-1"><span class="fa fa-envelope"></span>info@demolink.org</a>
-    </div>
-    <div class="grid_4 fright">
-      <div class="socials">
-        <a href="#">facebook</a>
-        <a href="#">twitter</a>
-        <a href="#">google+</a>
-      </div>
-    </div>
-    <div class="clear"></div>
-  </div>
-</div>
-<!--==============================
-              footer
-=================================-->
-</div>
-<!--footer id="footer">
-  <div class="container_12">
-    <div class="grid_12">
-      <div class="sub-copy">MOVE &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a> <br> Website designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a></div>
-    </div>
-    <div class="clear"></div>
-  </div>
-</footer>
-<a href="#" id="toTop" class="fa fa-angle-up"></a>-->
 <?php
 }
 else

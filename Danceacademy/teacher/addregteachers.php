@@ -1,9 +1,9 @@
 <?php
  session_start();
 include("dbconnection.php");
-$Tname=$_POST['name'];
-$Tcontact=$_POST['contactno'];
-$Taddress=$_POST['address'];
+$teach_name=$_POST['name'];
+$teach_contact=$_POST['contactno'];
+$teach_address=$_POST['address'];
 $email=$_POST['email'];
 $qualification=$_POST['qualification'];
 $description=$_POST['description'];
@@ -32,7 +32,7 @@ if($n>0)
   $a=mysqli_fetch_array($result);
   $login_id=$a['login_id'];
 }
-$sq="insert into tbl_teacher(login_id,Tname,Tcontact,Taddress,email,qualification,description,file,status) values ('$login_id','$Tname','$Tcontact','$Taddress','$email','$qualification','$description','$file','$status')";
+$sq="insert into tbl_teacher(login_id,teach_name,teach_contact,teach_address,email,qualification,description,file,status) values ('$login_id','$teach_name','$teach_contact','$teach_address','$email','$qualification','$description','$file','$status')";
 
 mysqli_query($con,$sq)
  

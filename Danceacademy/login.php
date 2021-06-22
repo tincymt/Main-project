@@ -185,7 +185,7 @@ color:#000;
 		<div class="container_12">
 			<div class="grid_12">
 				
-				    <img src="user/images/p51.jpg">
+				    <img src="images/p777c.jpg">
            
 		</div>
 		 <div class="container_12">
@@ -196,12 +196,13 @@ color:#000;
                <li><a href="home.html">Home</a></li>
                <li><a href="about.php">About</a></li>
               <li><a href="classes.html">Our classes</a></li>
-               <li><a href="staff.html">Instructors</a></li>
+               <li><a href="staff.php">Our Team</a></li>
+
                <li><a href="contacts.php">Contacts</a></li>
-			
+			<li><a href="gallery.html">Gallery</a></li>
 			<li class="nav navbar-right"><a href="studreg.html">
 				Sign up</a>
-          
+          </ul> 
 		 </nav>
  <div class="clear"></div>
           </div>
@@ -235,9 +236,9 @@ color:#000;
 			<center><input type="submit" name="" value="SIGN IN" type="submit"></center>
 			<br>
 			<center><p>
-			<a href="forget.html">Forget your Password </a><br>
+			<a href="studreg.html">Dont have an account</a><br>
 			
-			<a href="studreg.html">Don't have an account </a>
+
 			</center></p>
     </div>
 

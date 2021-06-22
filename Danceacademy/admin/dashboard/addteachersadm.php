@@ -5,7 +5,7 @@ include("dbconnection.php");
 $username=$_POST["username"];
 $password=$_POST["password"];
 $pass=md5($password);
-$usertype=$_POST["usertype"];
+$usertype='teacher';
 
 
 $r="select * from tbl_login where username='$username'";
