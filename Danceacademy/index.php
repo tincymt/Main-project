@@ -498,10 +498,4 @@ Sunday 11am-6pm</address>
 	
 </body>
 </html>
-<?php
-}
-else
-{
-header("location:login.php");
-}
-?>
+
